@@ -33,15 +33,6 @@ const guildId = "938137069396566038";
 
 client.on("ready", async () => {
   console.log("I'm ready");
-
-  const commands = getApp(guildId).commands.get();
-
-  await getApp(guildId).commands.post({
-    data: {
-      name: "animal",
-      description: "animal",
-    },
-  });
 });
 
 client.on("messageCreate", async (msg) => {
@@ -54,9 +45,10 @@ client.on("messageCreate", async (msg) => {
   const args = msg.content.slice(prefix.length).trim().split(/ +/g);
   const cmd = args.shift().toLowerCase();
 
-  if (cmd === "albums") {
-    client.commands.get("kesha-albums").execute(msg, args);
-  }
+  if (cmd === "albums") client.commands.get("kesha-albums").execute(msg, args);
+  if (cmd === "help") client.commands.get("help").help(msg,args)
+  if (cmd === "msg") client.commands.get("AI").AI(msg,args)
+  if (cmd === "img") client.commands.get("google-photo").GooglePhotos(msg,args)
 });
 
 client.on("interactionCreate", async (interaction) => {

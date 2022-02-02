@@ -11,9 +11,9 @@ const interaction = async (interaction) => {
     .setTitle(filterAlbums.name)
     .setDescription(filterAlbums.description)
     .setURL(filterAlbums.spotify_URL)
-    .setThumbnail(filterAlbums.album_URL)
+    .setThumbnail(filterAlbums.album_URL) 
     .setFooter({
-      text: "Kesha",
+      text: "Artist: Kesha",
       iconURL:
         "https://i.scdn.co/image/ab6761610000e5ebf271138f95fbe8188d909d50",
     });
@@ -26,6 +26,6 @@ const interaction = async (interaction) => {
 
 module.exports = {
   name: "album-reply",
-  description: "user event on reply",
+  description: "user event on reply", 
   interaction,
 };
