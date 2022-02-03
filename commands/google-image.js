@@ -48,8 +48,9 @@ const GooglePhotos = async (msg, args) => {
       .map((v, i) => links.eq(i).attr("src"));
 
     clearInterval(interval);
+    photoMessage.delete()
     const randomNumber = Math.floor(Math.random() * urls.length);
-    photoMessage.edit(urls[randomNumber]);
+    msg.channel.send(urls[randomNumber]);
   });
 };
 

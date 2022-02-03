@@ -20,17 +20,6 @@ for (let files of commandFiles) {
   client.commands.set(command.name, command);
 }
 
-const getApp = (guildId) => {
-  const app = client.api.applications(client.user.id);
-  if (guildId) {
-    app.guilds(guildId);
-  }
-
-  return app;
-};
-
-const guildId = "938137069396566038";
-
 client.on("ready", async () => {
   console.log("I'm ready");
 });
@@ -49,10 +38,13 @@ client.on("messageCreate", async (msg) => {
   if (cmd === "help") client.commands.get("help").help(msg,args)
   if (cmd === "msg") client.commands.get("AI").AI(msg,args)
   if (cmd === "img") client.commands.get("google-photo").GooglePhotos(msg,args)
+  if(cmd === "ship") client.commands.get("ship").getShip(msg,args)
+  if(cmd === "drip") client.commands.get("drip").getDrip(msg,args)
+  if(cmd === "bidentweet") client.commands.get("biden tweet").getBidenTweet(msg, args)
 });
 
 client.on("interactionCreate", async (interaction) => {
-  if (interaction.customId === "kesha-albums") {
+  if (interaction.customId === "kesha-albums") {    
     client.commands.get("album-reply").interaction(interaction);
   }
 });

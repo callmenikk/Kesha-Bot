@@ -3,7 +3,7 @@ const fetch = require('node-fetch')
 const AI = async (msg, args) => {
 	const message = args.join(" ").trim().toLowerCase()
 
-	const URL = `https://api.monkedev.com/fun/chat?msg=${message}&key=${process.env.AI_TOKEN}`
+	const URL = `https://api.popcatdev.repl.co/chatbot?msg=${message}&owner=callmenikk&botname=Kesha`
 	
 	await fetch(URL)
 	.then(response => response.json())
