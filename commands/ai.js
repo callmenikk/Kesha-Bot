@@ -1,14 +1,18 @@
 const fetch = require('node-fetch')
 
-const AI = async (msg, args) => {
+const AI = (msg, args) => {
 	const message = args.join(" ").trim().toLowerCase()
 
 	const URL = `https://api.popcatdev.repl.co/chatbot?msg=${message}&owner=callmenikk&botname=Kesha`
 	
-	await fetch(URL)
+	fetch(URL)
 	.then(response => response.json())
 	.then(KeshaReply => {
-		msg.channel.send(KeshaReply.response)
+		if(!KeshaReply.response){
+			msg.reply("beep book beep... i died")
+		}else {
+			msg.reply(KeshaReply.response)
+		}
 	})
 }
 

@@ -4,20 +4,20 @@ const request = require("request");
 const GooglePhotos = async (msg, args) => {
   const photo_query = args.join(" ").trim().toLowerCase();
 
-  if (!photo_query) {
+  if (photo_query === '') {
     msg.reply("Please enter image name \nsomthing like that `$img kesha`");
     return;
   }
 
   const photoMessage = await msg.channel.send(
-    `Looking for **${photo_query}** in internet. 🔍`
+    `Looking for **${photo_query}** on internet. 🔍`
   );
   let dotsLength = 1;
 
   let interval = setInterval(() => {
 	  
 	  photoMessage.edit(
-		  `Looking for **${photo_query}** in internet${".".repeat(dotsLength)} 🔍`
+		  `Looking for **${photo_query}** on internet${".".repeat(dotsLength)} 🔍`
 		  );
 		  if (dotsLength === 4) {
 			  dotsLength = 1;
@@ -48,9 +48,14 @@ const GooglePhotos = async (msg, args) => {
       .map((v, i) => links.eq(i).attr("src"));
 
     clearInterval(interval);
-    photoMessage.delete()
     const randomNumber = Math.floor(Math.random() * urls.length);
-    msg.channel.send(urls[randomNumber]);
+    photoMessage.delete()
+    
+    if(!urls[randomNumber]){
+      msg.reply("Opps... somthing went wrong")
+    }else {
+      msg.channel.send(urls[randomNumber])
+    }
   });
 };
 

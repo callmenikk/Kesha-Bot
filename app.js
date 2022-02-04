@@ -2,7 +2,7 @@ const { Client, Intents, Collection } = require("discord.js");
 const { readdirSync } = require("fs");
 require("dotenv").config();
 
-const client = new Client({
+const client = new Client({ 
   intents: [
     Intents.FLAGS.GUILDS,
     Intents.FLAGS.GUILD_MESSAGES,
@@ -15,17 +15,19 @@ const commandFiles = readdirSync("./commands/").filter((file) =>
   file.endsWith(".js")
 );
 
+
 for (let files of commandFiles) {
   const command = require(`./commands/${files}`);
   client.commands.set(command.name, command);
 }
-
+ 
 client.on("ready", async () => {
   console.log("I'm ready");
 });
 
 client.on("messageCreate", async (msg) => {
   const prefix = "$";
+
 
   if (msg.author.bot) return;
   if (!msg.guild) return;
@@ -47,6 +49,7 @@ client.on("interactionCreate", async (interaction) => {
   if (interaction.customId === "kesha-albums") {    
     client.commands.get("album-reply").interaction(interaction);
   }
-});
+}); 
 
-client.login(process.env.TOKEN);
+client.login(process.env.TOKEN); 
+ 
