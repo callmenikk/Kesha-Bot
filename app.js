@@ -61,5 +61,11 @@ client.on("interactionCreate", async (interaction) => {
   }
 }); 
 
+const port = process.env.PORT || 8080;
+
+app.listen(port, () => {
+  console.log('Discord bot is on', port)
+});
+
 client.login("OTM4MTM2NDgwNDUzMzY1Nzcw.Yfl5rg.TfvDrOFbb5RK4xu9cDOl8G92zTA"); 
  
