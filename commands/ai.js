@@ -1,5 +1,6 @@
 const fetch = require('node-fetch')
 
+
 const AI = (msg, args) => {
 	const message = args.join(" ").trim().toLowerCase()
 
@@ -9,7 +10,7 @@ const AI = (msg, args) => {
 	.then(response => response.json())
 	.then(KeshaReply => {
 		if(!KeshaReply.response){
-			msg.reply("beep book beep... i died")
+			msg.reply("beep boop beep... i died")
 		}else {
 			msg.reply(KeshaReply.response)
 		}

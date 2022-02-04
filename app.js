@@ -22,7 +22,7 @@ for (let files of commandFiles) {
 }
  
 client.on("ready", async () => {
-  console.log("I'm ready");
+  client.user.setActivity('Kesha 🌈🛸👽', { type: 'LISTENING' })
 });
 
 client.on("messageCreate", async (msg) => {
@@ -43,6 +43,9 @@ client.on("messageCreate", async (msg) => {
   if(cmd === "ship") client.commands.get("ship").getShip(msg,args)
   if(cmd === "drip") client.commands.get("drip").getDrip(msg,args)
   if(cmd === "bidentweet") client.commands.get("biden tweet").getBidenTweet(msg, args)
+  if(cmd === "sadcat") client.commands.get("sad cat").sadCat(msg, args)
+  if(cmd === 'github') client.commands.get("github").getGithub(msg, args)
+  if(cmd === "clown") client.commands.get("clown").clownUser(msg, args)
 });
 
 client.on("interactionCreate", async (interaction) => {
