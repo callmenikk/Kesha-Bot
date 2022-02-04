@@ -1,5 +1,6 @@
 const { Client, Intents, Collection } = require("discord.js");
 const { readdirSync } = require("fs");
+const app = require('express')()
 require("dotenv").config();
 
 const client = new Client({ 
@@ -9,6 +10,12 @@ const client = new Client({
     Intents.FLAGS.DIRECT_MESSAGES,
   ],
 });
+
+app.get("/", (req, res) => {
+  res.send({
+    msg: "bot is deployed"
+  })
+})
 
 client.commands = new Collection();
 const commandFiles = readdirSync("./commands/").filter((file) =>
