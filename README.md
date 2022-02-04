@@ -17,6 +17,6 @@ it is still under development process bit here is what it can yet
 * plays songs in Coice chat
 * fake biden tweet
 * Ship command with mentioned user
-and other other fun commands which will be included on **(Kesha-bot website)[https://kesha.netlify.app/]**
+and other other fun commands which will be included on **[Kesha-bot website](https://kesha.netlify.app/)**
 
  this is list what bot can do, or must do in feature
