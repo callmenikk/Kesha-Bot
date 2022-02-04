@@ -14,7 +14,9 @@ it is still under development process bit here is what it can yet
 * chat with Kesha's AI
 * get info and Spotify URL of each Kesha's album
 * track google photos *[very slow, because it web scraps]*
-* play only kesha's songs *[doesn't work yet]*
-* kick, mute, ban *[doesn't work yet]*
+* plays songs in Coice chat
+* fake biden tweet
+* Ship command with mentioned user
+and other other fun commands which will be included on **(Kesha-bot website)[https://kesha.netlify.app/]**
 
  this is list what bot can do, or must do in feature
