@@ -10,7 +10,7 @@ const AI = (msg, args) => {
 	.then(response => response.json())
 	.then(KeshaReply => {
 		if(!KeshaReply.response){
-			msg.reply("beep boop beep... i died")
+			msg.reply("I'm tired, can u stfu for a minute? bitch")
 		}else {
 			msg.reply(KeshaReply.response)
 		}
