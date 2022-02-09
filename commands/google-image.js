@@ -1,8 +1,20 @@
+const { MessageEmbed } = require('discord.js')
 const cheerio = require("cheerio");
 const request = require("request");
 
 const GooglePhotos = async (msg, args) => {
   const photo_query = args.join(" ").trim().toLowerCase();
+
+  if(!msg.channel.nsfw){
+    const declineEmbed = new MessageEmbed()
+      .setTitle('**Command  Declined ⚠️**')
+    	.setDescription("**Sorry but this command can't be used here, you must use NSFW channel for that, I'm doing this because if you will input some NSFW words there, results will be 💀... \nanyways use NSFW channel**")
+    	.setColor('#ff2929')
+
+      await msg.reply({ embeds: [declineEmbed] })
+
+    return
+  }
 
   if (photo_query === '') {
     msg.reply("Please enter image name \nsomthing like that `$img kesha`");
