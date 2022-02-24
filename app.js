@@ -29,7 +29,7 @@ for (let files of commandFiles) {
 }
  
 client.on("ready", async () => {
-  client.user.setActivity('Kesha 🌈🛸👽', { type: 'LISTENING' })
+  client.user.setActivity('Kesha 🌈🛸👽', { type: 'STREAMING' })
 });
 
 client.on("messageCreate", async (msg) => {
@@ -69,3 +69,4 @@ app.listen(port, () => {
 
 client.login("OTM4MTM2NDgwNDUzMzY1Nzcw.Yfl5rg.TfvDrOFbb5RK4xu9cDOl8G92zTA"); 
  
+// there is comment to make sure changes exist
