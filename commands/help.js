@@ -1,14 +1,16 @@
 const { MessageEmbed } = require("discord.js");
 
-const help = (msg, args) => {
-  const params = args.join(" ").trim().toLowerCase();
+const help = (msg, client) => {
+
+  const avatar = client.user.displayAvatarURL({format: "png"})
+
   const embed = new MessageEmbed()
   .setTitle("Kesha bot help")
   .setDescription('**[Visit Kesha-bot website for commands 🌈🛸👽](https://kesha.netlify.app/commands)**')
   .setThumbnail(
-    "https://i.scdn.co/image/ab6761610000e5ebf271138f95fbe8188d909d50"  
+    avatar  
   )
-  .setFooter({text: "Kesha-bot", iconURL: "https://i.scdn.co/image/ab6761610000e5ebf271138f95fbe8188d909d50"}) 
+  .setFooter({text: "Kesha-bot", iconURL: avatar}) 
   .setColor(msg.member.displayHexColor);
     msg.channel.send({ embeds: [embed] });
   }

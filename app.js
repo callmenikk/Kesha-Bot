@@ -30,6 +30,7 @@ for (let files of commandFiles) {
  
 client.on("ready", async () => {
   client.user.setActivity('Kesha 🌈🛸👽', { type: 'STREAMING' })
+  console.log("bot is on");
 });
 
 client.on("messageCreate", async (msg) => {
@@ -44,7 +45,7 @@ client.on("messageCreate", async (msg) => {
   const cmd = args.shift().toLowerCase();
 
   if (cmd === "albums") client.commands.get("kesha-albums").execute(msg, args);
-  if (cmd === "help") client.commands.get("help").help(msg,args)
+  if (cmd === "help") client.commands.get("help").help(msg,client)
   if (cmd === "msg") client.commands.get("AI").AI(msg,args)
   if (cmd === "img") client.commands.get("google-photo").GooglePhotos(msg,args)
   if(cmd === "ship") client.commands.get("ship").getShip(msg,args)
