@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "pm2-runtime start ecosystem.config.js --env production"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "dotenv": "^15.0.0",
     "express": "^4.17.2",
     "node-fetch": "^2.6.7",
+    "pm2": "^5.2.0",
     "request": "^2.88.2"
   },
   "devDependencies": {
