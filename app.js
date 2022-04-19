@@ -29,7 +29,7 @@ for (let files of commandFiles) {
 }
  
 client.on("ready", async () => {
-  client.user.setActivity('Kesha 🌈🛸👽', { type: 'STREAMING' })
+  client.user.setActivity('My Crazy Beautiful Life 🌈', { type: 'STREAMING' })
   console.log("bot is on");
 });
 
