@@ -68,6 +68,6 @@ app.listen(port, () => {
   console.log('Discord bot is on', port)
 });
 
-client.login("OTM4MTM2NDgwNDUzMzY1Nzcw.Yfl5rg.SVWuDhh_3RRCM758uCn7HuqcJ2M"); 
+client.login(""); 
  
 // there is comment to make sure changes exist
